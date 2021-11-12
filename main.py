@@ -1,13 +1,9 @@
 #Define the function that will solve the cubic with 3 reals roots (returns just one root)
 def solveCubic(a,b,c,d):
     bracket1 = (-b**3)/(27*a**3) + (b*c)/(6*a**2) + (-d)/(2*a)
-    bracket2 = bracket1
-    bracket3 = (c)/(3*a)+(-b**2)/(9*a**2)
-    bracket4 = bracket1
-    bracket5 = bracket2
-    bracket6 = bracket3
-    bracket7 = (-b)/(3*a)
-    x = (bracket1+(bracket2**2+bracket3**3)**(1/2))**(1/3) + (bracket4-(bracket5**2+bracket6**3)**(1/2))**(1/3) + bracket7
+    bracket2 = (c)/(3*a)+(-b**2)/(9*a**2)
+    bracket3 = (-b)/(3*a)
+    x = (bracket1+(bracket1**2+bracket2**3)**(1/2))**(1/3) + (bracket1-(bracket1**2+bracket2**3)**(1/2))**(1/3) + bracket3
     x = str(x.real) #Make sure only the real part is returned
     line = "The root of the cubic is "+x
     return(line)
